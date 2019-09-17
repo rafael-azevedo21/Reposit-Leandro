@@ -8,37 +8,38 @@ int main()
 	int num;
 	do
 	{
+		//O que serÃ¡ mostrado ao iniciar o programa
 		printf("Digite um numero de 0 a 9");
 		printf("0 Para sair \n" 
 				"[1] Para saber se o numero e par \n" 
-				"[2] Para calcular uma potência \n" 
+				"[2] Para calcular uma potÃªncia \n" 
 				"[3] Para calcular uma raiz \n" 
-				"[4] Para saber se o ano é bissexto \n" 
-				"[5] Para calcular a média ponderada de 3 notas \n"
-				"[6] Para calcular a média \n" 
-				"[7] Para mostrar seu nome e matrícula \n"
+				"[4] Para saber se o ano Ã© bissexto \n" 
+				"[5] Para calcular a mÃ©dia ponderada de 3 notas \n"
+				"[6] Para calcular a mÃ©dia \n" 
+				"[7] Para mostrar seu nome e matrÃ­cula \n"
 				"[8] Para calcular o fatorial \n"
-				"[9] Para saber se o número é primo \n"
-				"[10] Para mostrar seu nome e matrícula \n" );
-				
+				"[9] Para saber se o nÃºmero Ã© primo \n"
+				"[10] Para mostrar seu nome e matrÃ­cula \n" );
+		//Captar o que o usuÃ¡rio digitou e guardar em num
 		scanf("%d", &num);
-		
+		//Comando importado pela biblioteca stdlib, serve para limpar a tela do programa
 		system("CLS");
-					
+		
 		if(num>0 && num<11)
 		{
 			switch (num)
 				{
 					case 1 :
 					{
-						//O objetivo aqui era saber se o núemro era par, ou seja divisivel por 2
+						//O objetivo aqui era saber se o nÃºemro era par, ou seja divisivel por 2
 						int num2;
 						int resto;
 						printf("Digite um numero inteiro: \n");
 						scanf("%d", &num2);
 						resto=num2%2;
 						if(resto == 0)
-						//Se ele for par, a divisão dele por 2 terá resto 0, caso contrário ele será impar
+						//Se ele for par, a divisÃ£o dele por 2 terÃ¡ resto 0, caso contrÃ¡rio ele serÃ¡ impar
 					{
 						printf("Esse numero e par \n");
 					}else if(resto !=0)
@@ -48,7 +49,7 @@ int main()
 					
 					case 2 :
 					{
-						//Nesse, o objetivo era calcular a potenciação de um número de rponto flutuante elevado a um inteiro
+						//Nesse, o objetivo era calcular a potenciaÃ§Ã£o de um nÃºmero de ponto flutuante elevado a um inteiro
 						float numA, resultado;
 						int numB;
 						printf("Insira um numero de ponto flutuante: ");
@@ -56,14 +57,14 @@ int main()
 						printf("Insira um numero inteiro: ");
 						scanf("%d", &numB);
 						resultado = pow(numA, numB);
-						//Para realizar essa função, foi utilizado o comando pow introduzido pela biblioteca math
-						printf("Valor da potência: 	%.3e \n", resultado );
+						//Para realizar essa funÃ§Ã£o, foi utilizado o comando pow introduzido pela biblioteca math
+						printf("Valor da potÃªncia: 	%.3e \n", resultado );
 						break;
 					}
 					case 3 :
 					{
-						/*Nesse, o objetivo era calcular a raiz de um número de ponto flutuante
-						 tendo como índice um númeor inteiro*/
+						/*Nesse, o objetivo era calcular a raiz de um nÃºmero de ponto flutuante
+						 tendo como Ã­ndice um nÃºmeor inteiro*/
 						float numA1, resultado1;
 						int numB1;
 						printf("Insira um numero de ponto flutuante: ");
@@ -71,32 +72,32 @@ int main()
 						printf("Insira um numero inteiro: ");
 						scanf("%d", &numB1);
 						resultado1 = pow(numA1, 1./numB1);
-						//Para isso, utilizei o mesmo comando pow, usando uma das  propriedades de potenciação.
+						//Para isso, utilizei o mesmo comando pow, usando uma das  propriedades de potenciaÃ§Ã£o.
 						printf("Valor da raiz: 	%.3e \n", resultado1);
 						break;
 					}
 					
 					case 4 :
 					{
-						//Aqui, o objetivo do programa era ler um ano dado pelo usuário e informar se ele é bissexto ou não
+						//Aqui, o objetivo do programa era ler um ano dado pelo usuÃ¡rio e informar se ele Ã© bissexto ou nÃ£o
 						int ano,bissexto;
-						printf(" Digite um ano para descobrir se ele é bissexto:");
+						printf(" Digite um ano para descobrir se ele Ã© bissexto:");
 						scanf("%d", &ano);
 						bissexto = ano%4;
-						/*Sabendo que todo ano bissexto é multiplo de 4,
-						 sua divisão por 4 tem que ter como resto 0, caso dê algo diferente disso, não é bissexto.*/
+						/*Sabendo que todo ano bissexto Ã© multiplo de 4,
+						 sua divisÃ£o por 4 tem que ter como resto 0, caso dÃª algo diferente disso, nÃ£o Ã© bissexto.*/
 						if(bissexto==0){
-							printf("O ano é bissexto \n");
+							printf("O ano Ã© bissexto \n");
 						}
 						else{
-							printf("O ano não é bissexto \n");
+							printf("O ano nÃ£o Ã© bissexto \n");
 						}
 						break;
 					}
 					
 					case 5 :
 					{
-						/*O objetivo desse case era calcular a média ponderada de 3 notas.
+						/*O objetivo desse case era calcular a mÃ©dia ponderada de 3 notas.
 					 	Onde as duas primerias tem peso 1 e a terceira tem peso 3*/
 						float nota1,nota2,nota3,media;
 						printf ("Digite sua primeira nota");
@@ -106,8 +107,8 @@ int main()
 						printf("Digite sua terceita nota");
 						scanf("%f", &nota3);
 						media=(nota1+nota2+2*nota3)/4;
-						/*Para realizar tal função, o programa recebe os valores digitados pelo usuário,
-						 multiplica pelos respectivos pesos e divide pelo número total deldes.*/
+						/*Para realizar tal funÃ§Ã£o, o programa recebe os valores digitados pelo usuÃ¡rio,
+						 multiplica pelos respectivos pesos e divide pelo nÃºmero total deldes.*/
 						if(media>= 6){
 							printf("Sua media e %f e voce foi aprovado \n", media);
 						}
@@ -119,20 +120,20 @@ int main()
 					
 					case 6 :
 					{
-						//Nesse programa, o objetivo além de calcular a média é verificar se as notas digitadads são válidas
+						//Nesse programa, o objetivo alÃ©m de calcular a mÃ©dia Ã© verificar se as notas digitadads sÃ£o vÃ¡lidas
 						float nota1, nota2,media;
 						printf("Digite sua primeira nota");
 						scanf("%f", &nota1);
 						if (nota1>=0 && nota1<=10)
-						/*Tomando a nota minima como 0 e a máxima como 10, tem-se essa estrutura if
-						, caso o usuário digite uma nota inválida, encerra-se o case e se reexibe o menu*/
+						/*Tomando a nota minima como 0 e a mÃ¡xima como 10, tem-se essa estrutura if
+						, caso o usuÃ¡rio digite uma nota invÃ¡lida, encerra-se o case e se reexibe o menu*/
 						{
 							printf("Digite sua Segunda nota");
 							scanf("%f", &nota2);
 							if (nota2 >= 0 && nota2 <= 10)
 							{
 								media= (nota1 + nota2)/2;
-								printf("Sua média é: %f \n", media);
+								printf("Sua mÃ©dia Ã©: %f \n", media);
 							}
 							else{
 								break;
@@ -167,10 +168,10 @@ int main()
 						printf("Digite seu nome: \n");
 						scanf("%s", &nome);
 						
-						printf("Digite sua matrícula: \n");
+						printf("Digite sua matrÃ­cula: \n");
 						scanf("%d", &matricula);
-						
-						printf("Olá %s, sua matrícula em Hexadecimal é: %2X \n", nome, matricula );
+						//A troca de %s para %2X serve para converter de decimal para hexadecimal.
+						printf("OlÃ¡ %s, sua matrÃ­cula em Hexadecimal Ã©: %2X \n", nome, matricula );
 						break;
 					}
 					default:
