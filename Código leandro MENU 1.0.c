@@ -9,7 +9,7 @@ int main()
 	do
 	{
 		//O que será mostrado ao iniciar o programa
-		printf("Digite um numero de 0 a 9");
+		printf("Digite um numero de 0 a 9 \n");
 		printf("0 Para sair \n" 
 				"[1] Para saber se o numero e par \n" 
 				"[2] Para calcular uma potência \n" 
