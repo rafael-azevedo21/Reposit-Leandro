@@ -1,3 +1,4 @@
+
 #include<stdlib.h>
 #include<stdio.h>
 #include<math.h>
@@ -81,7 +82,7 @@ int main()
 					{
 						//Aqui, o objetivo do programa era ler um ano dado pelo usuário e informar se ele é bissexto ou não
 						int ano,bissexto;
-						printf(" Digite um ano para descobrir se ele é bissexto:");
+						printf(" Digite um ano para descobrir se ele é bissexto: ");
 						scanf("%d", &ano);
 						bissexto = ano%4;
 						/*Sabendo que todo ano bissexto é multiplo de 4,
@@ -122,13 +123,13 @@ int main()
 					{
 						//Nesse programa, o objetivo além de calcular a média é verificar se as notas digitadads são válidas
 						float nota1, nota2,media;
-						printf("Digite sua primeira nota");
+						printf("Digite sua primeira nota: ");
 						scanf("%f", &nota1);
 						if (nota1>=0 && nota1<=10)
 						/*Tomando a nota minima como 0 e a máxima como 10, tem-se essa estrutura if
 						, caso o usuário digite uma nota inválida, encerra-se o case e se reexibe o menu*/
 						{
-							printf("Digite sua Segunda nota");
+							printf("Digite sua Segunda nota: ");
 							scanf("%f", &nota2);
 							if (nota2 >= 0 && nota2 <= 10)
 							{
@@ -136,10 +137,12 @@ int main()
 								printf("Sua média é: %f \n", media);
 							}
 							else{
+								printf("Nota inválida \n");
 								break;
 							}
 						}
 						else
+						printf("Nota inválida \n");
 						break;
 					}
 			
@@ -151,8 +154,16 @@ int main()
 					
 					case 8 :
 					{
-						
-							printf ("\n");
+						int contador;
+						int num,result=1;
+						printf("Digite um número para saber o seu fatorial.\n ");
+						scanf("%d", &num);
+						for(;num>=1 ;num=num-1)
+						{
+							result= result*num; /*Significa que result=result*fatorial*/
+						}
+						printf("O fatorial do número digitado é: %d \n", result);
+
 							break;
 					}
 					case 9 :
@@ -182,7 +193,7 @@ int main()
 		}
 		else if(num<0 || num>10 )
 		{
-			printf("Digite um numero valido");
+			printf("Digite um numero valido \n");
 		}
 		else 
 		{
