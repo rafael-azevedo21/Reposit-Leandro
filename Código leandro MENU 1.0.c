@@ -18,9 +18,9 @@ int main()
 				"[4] Para saber se o ano é bissexto \n" 
 				"[5] Para calcular a média ponderada de 3 notas \n"
 				"[6] Para calcular a média \n" 
-				"[7] Para mostrar seu nome e matrícula \n"
+				"[7] Para saber se o número é primo \n"
 				"[8] Para calcular o fatorial \n"
-				"[9] Para saber se o número é primo \n"
+				"[9] Para imprimir a sequência de fibonacci \n"
 				"[10] Para mostrar seu nome e matrícula \n" );
 		//Captar o que o usuário digitou e guardar em num
 		scanf("%d", &num);
@@ -148,8 +148,28 @@ int main()
 			
 					case 7 :
 					{
-							printf ("  \n");
-							break;
+						int num;
+						int cont=0; 
+						int i;
+						printf("Digite um número para saber se ele é primo ou não");
+						scanf("%f", &num);
+						for(i=0;i<=num;i++)
+						{
+							if(num%i==0)
+							{
+								cont++;
+
+							}	
+						}
+						if(cont==2)
+						{
+							printf("O numero e primo");
+						}
+						else if(cont!=2)
+						{
+							printf("O número nao e primo");
+						}
+						break;
 					}
 					
 					case 8 :
@@ -159,8 +179,9 @@ int main()
 						printf("Digite um número para saber o seu fatorial.\n ");
 						scanf("%d", &num);
 						for(;num>=1 ;num=num-1)
+						//Dessa forma, vai pegar todos os antecessores do número digitado até chegar a 1
 						{
-							result= result*num; /*Significa que result=result*fatorial*/
+							result= result*num; 
 						}
 						printf("O fatorial do número digitado é: %d \n", result);
 
