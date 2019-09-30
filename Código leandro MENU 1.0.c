@@ -196,13 +196,11 @@ int main()
 						printf("Digite um número para imprimir a sequencia de fibo até ele: ");
 						scanf("%d", &num);
 						for(i=1; i<=num; i++){
-							if(i==1){
-								printf(" \n%d \n", fibo1 );
-							}
-							else if(i==2){
-								printf("%d \n", fibo1);
+							if(i==1||i==2){
+								printf(" %d \n", fibo1 );
 							}
 							else{
+								 //fibo2 vai servir para acumular o valor passado
 								soma=fibo1+fibo2;
 								fibo1=fibo2;
 								fibo2=soma;
