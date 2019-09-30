@@ -1,4 +1,3 @@
-
 #include<stdlib.h>
 #include<stdio.h>
 #include<math.h>
@@ -189,7 +188,27 @@ int main()
 					}
 					case 9 :
 					{
-							printf (" \n");
+						int num;
+						int i;
+						int fibo2=1;
+						int fibo1=1;
+						int soma;
+						printf("Digite um número para imprimir a sequencia de fibo até ele: ");
+						scanf("%d", &num);
+						for(i=1; i<=num; i++){
+							if(i==1){
+								printf(" \n%d \n", fibo1 );
+							}
+							else if(i==2){
+								printf("%d \n", fibo1);
+							}
+							else{
+								soma=fibo1+fibo2;
+								fibo1=fibo2;
+								fibo2=soma;
+								printf("%d \n", soma);
+							}
+						}
 							break;
 					}
 					case 10:
