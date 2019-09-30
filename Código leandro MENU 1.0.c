@@ -10,7 +10,7 @@ int main()
 	{
 		//O que será mostrado ao iniciar o programa
 		printf("Digite um numero de 0 a 9 \n");
-		printf("0 Para sair \n" 
+		printf("[0] Para sair \n" 
 				"[1] Para saber se o numero e par \n" 
 				"[2] Para calcular uma potência \n" 
 				"[3] Para calcular uma raiz \n" 
@@ -20,13 +20,18 @@ int main()
 				"[7] Para saber se o número é primo \n"
 				"[8] Para calcular o fatorial \n"
 				"[9] Para imprimir a sequência de fibonacci \n"
-				"[10] Para mostrar seu nome e matrícula \n" );
+				"[10] Para mostrar seu nome e matrícula \n"
+				"[11] Para ver quantos caracteres um texto possui \n"
+				"[12] Para ver quantas vogais tem no texto \n"
+				"[13] Para comparar 2 textos e saber se são iguais ou diferentes \n"
+				"[14] Para transferir um texto de uma variável para outra \n"
+				"[15] Para concatenar 2 textaos \n" );
 		//Captar o que o usuário digitou e guardar em num
 		scanf("%d", &num);
 		//Comando importado pela biblioteca stdlib, serve para limpar a tela do programa
 		system("CLS");
 		
-		if(num>0 && num<11)
+		if(num>0 && num<16)
 		{
 			switch (num)
 				{
@@ -196,11 +201,13 @@ int main()
 						printf("Digite um número para imprimir a sequencia de fibo até ele: ");
 						scanf("%d", &num);
 						for(i=1; i<=num; i++){
-							if(i==1||i==2){
-								printf(" %d \n", fibo1 );
+							if(i==1){
+								printf(" \n%d \n", fibo1 );
+							}
+							else if(i==2){
+								printf("%d \n", fibo1);
 							}
 							else{
-								 //fibo2 vai servir para acumular o valor passado
 								soma=fibo1+fibo2;
 								fibo1=fibo2;
 								fibo2=soma;
@@ -223,13 +230,102 @@ int main()
 						printf("Olá %s, sua matrícula em Hexadecimal é: %2X \n", nome, matricula );
 						break;
 					}
+					case 11:
+					{
+						//O objetivo desse case é contar os caracteres de um texto digitado pelo usuário.
+						int i;
+						int cont=0;
+						char texto[100];
+						printf("Digite um texto para saber a quantidade de caracteres presente nele: \n");
+						scanf("%s", &texto);
+						//Para isso, criei um for para percorrer todo o string e cada vez que anda uma casa, adiciona 1 ao contador
+						for(i=0;texto[i]!='\0' && i<100; i++){
+							cont++;
+						}
+						printf("A quantidade de caracteres no texto é de: %d \n", cont);
+						break;
+					}
+					case 12:
+					{
+						//Funciona fora do menu, mas quando insiro, sempre da erro
+						//O objetivo desse case é contar a quantidade de vogais no texto digitado pelo usuário
+						char palavra[30];
+						int i;
+						int contVogais=0;
+						printf("Digite uma palavra para saber a quantidade de caracteres e de vogais nela: ");
+						gets(palavra);
+						//Para isso, usei essa condição if que só conta se for vogal
+						for(i=0;palavra[i]!='\0' && i<sizeof(palavra);i++)
+						{
+						if(palavra[i]=='A'||palavra[i]=='a'||palavra[i]=='E'||palavra[i]=='e'||
+					       palavra[i]=='I'||palavra[i]=='i'||palavra[i]=='O'||palavra[i]=='o'||
+						   palavra[i]=='U'||palavra[i]=='u'){
+							contVogais++;
+						   }
+						}
+						  printf("O número total de vogais é : %d e o total de caracteres é %d \n", contVogais, i);
+
+						break;
+					}
+					case 13:
+					{
+						//O objetivo aqui é comparar 2 strings e dzier se eles são iguais ou não
+						int i;
+						int falso=0;
+						char texto1[100];
+						char texto2[100];
+						printf("Digite um texto que ser´comparado com um segundo: \n");
+						scanf("%s", &texto1);
+						printf("Digite um texto para ser comparado com o primeiro: \n");
+						scanf("%s", &texto2);
+						//Para isso, utilizei um for que percorre o string e compara letra por letra
+						//Obs: Não consegui resolver quando uma palavra termina igual, mas é maior que a outra
+						for(i=0;texto1[i]!='\0' && i<sizeof(texto1);i++) 
+						{
+							if(texto1[i] != texto2[i] || texto2[i] != texto1[i] ){
+						    printf("Os textos são diferentes \n");
+						    falso++;
+						    break;
+							}
+						}
+						if(falso == 0){
+						printf("Os textos são iguais \n");
+						}
+						break;
+					}
+					case 14:
+					{
+						//Nesse case, o objetivo é pegar um texto e transfiri-lo para outra variável
+						int i;
+						char texto1[100];
+						char texto2[100];
+						printf("Digite um texto para tranfiri-lo para outra variável e imprimi-lo: \n");
+						scanf("%s",texto1);
+						for(i=0;texto1[i]!='\0'&& i<sizeof(texto1);i++){
+						texto2[i]=texto1[i];
+						}
+						printf(" O texto impresso em outra variável: \n %s",texto2);
+						break;
+					}
+					case 15:
+					{
+						//Aqui, o objetivo era concatenar, ou seja, juntar, os 2 textos recebidos
+					    char texto1[100];
+					    char texto2[100];
+					    printf("Digite um texto que será concatenado com  segundo: \n");
+					    scanf("%s", &texto1);
+					    printf("Digite um texto para ser concatenado com o primeiro: \n");
+					    scanf("%s", &texto2);
+					    printf("%s%s",texto1,texto2);
+						break;
+					}
 					default:
 							printf("Valor Inexistente \n");
 							break;
 						
 				}
 		}
-		else if(num<0 || num>10 )
+		else if(num<0 || num>15 )
 		{
 			printf("Digite um numero valido \n");
 		}
