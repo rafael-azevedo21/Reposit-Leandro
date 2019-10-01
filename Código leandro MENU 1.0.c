@@ -281,7 +281,7 @@ int main()
 						gets(texto2);
 						//Para isso, utilizei um for que percorre o string e compara letra por letra
 						for(i=0;texto1[i]!='\0'&&i<100;i++) 
-							{
+						{
 					   		if(texto1[i] != texto2[i]){
 						 	  falso++;
 						 	  break;
