@@ -28,6 +28,8 @@ int main()
 				"[15] Para concatenar 2 textaos \n" );
 		//Captar o que o usuário digitou e guardar em num
 		scanf("%d", &num);
+		//Para limpar o cache
+		fflush(stdin);
 		//Comando importado pela biblioteca stdlib, serve para limpar a tela do programa
 		system("CLS");
 		
@@ -237,7 +239,7 @@ int main()
 						int cont=0;
 						char texto[100];
 						printf("Digite um texto para saber a quantidade de caracteres presente nele: \n");
-						scanf("%s", &texto);
+						gets(texto);
 						//Para isso, criei um for para percorrer todo o string e cada vez que anda uma casa, adiciona 1 ao contador
 						for(i=0;texto[i]!='\0' && i<100; i++){
 							cont++;
@@ -247,7 +249,6 @@ int main()
 					}
 					case 12:
 					{
-						//Funciona fora do menu, mas quando insiro, sempre da erro
 						//O objetivo desse case é contar a quantidade de vogais no texto digitado pelo usuário
 						char palavra[30];
 						int i;
@@ -275,21 +276,26 @@ int main()
 						char texto1[100];
 						char texto2[100];
 						printf("Digite um texto que ser´comparado com um segundo: \n");
-						scanf("%s", &texto1);
+						gets(texto1);
 						printf("Digite um texto para ser comparado com o primeiro: \n");
-						scanf("%s", &texto2);
+						gets(texto2);
 						//Para isso, utilizei um for que percorre o string e compara letra por letra
-						//Obs: Não consegui resolver quando uma palavra termina igual, mas é maior que a outra
-						for(i=0;texto1[i]!='\0' && i<sizeof(texto1);i++) 
-						{
-							if(texto1[i] != texto2[i] || texto2[i] != texto1[i] ){
-						    printf("Os textos são diferentes \n");
-						    falso++;
-						    break;
+						for(i=0;texto1[i]!='\0'&&i<100;i++) 
+							{
+					   		if(texto1[i] != texto2[i]){
+						 	  falso++;
+						 	  break;
 							}
+
+						}
+						if(texto1[i]!=texto2[i]){
+							falso++;
 						}
 						if(falso == 0){
-						printf("Os textos são iguais \n");
+							printf("Os textos são iguais \n");
+						}
+						else{
+							printf("Os textos são diferentes \n");	
 						}
 						break;
 					}
@@ -300,7 +306,7 @@ int main()
 						char texto1[100];
 						char texto2[100];
 						printf("Digite um texto para tranfiri-lo para outra variável e imprimi-lo: \n");
-						scanf("%s",texto1);
+						gets(texto1);
 						for(i=0;texto1[i]!='\0'&& i<sizeof(texto1);i++){
 						texto2[i]=texto1[i];
 						}
@@ -313,9 +319,9 @@ int main()
 					    char texto1[100];
 					    char texto2[100];
 					    printf("Digite um texto que será concatenado com  segundo: \n");
-					    scanf("%s", &texto1);
+					    gets(texto1);
 					    printf("Digite um texto para ser concatenado com o primeiro: \n");
-					    scanf("%s", &texto2);
+					    gets(texto2);
 					    printf("%s%s",texto1,texto2);
 						break;
 					}
