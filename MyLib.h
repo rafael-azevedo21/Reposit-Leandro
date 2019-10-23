@@ -1,0 +1,21 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+#include <locale.h>
+
+int menu();
+void par();
+int potencia();
+int raiz();
+void bissexto();
+int mediaPond();
+int media();
+void primo();
+int fatorial();
+int fibo();
+void matricula();
+int caracteres();
+int vogal();
+void comparar();
+void transf();
+void concatenar();
